@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shuttle Vacation — Plataforma de traslados</title>
+<link rel="icon" href="assets/isotipo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ BARRA SUPERIOR : SELECTOR DE ROL ============ -->
+<header class="app-topbar">
+  <div class="topbar-brand">
+    <img src="assets/isotipo.jpeg" alt="Shuttle Vacation" class="topbar-mark">
+    <div class="topbar-word">
+      <span class="topbar-word-main">SHUTTLE</span><span class="topbar-word-accent">VACATION</span>
+    </div>
+  </div>
+
+  <nav class="role-switch" id="roleSwitch">
+    <button class="role-btn is-active" data-role="client">
+      <svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4.4 0-9 2.2-9 5v3h18v-3c0-2.8-4.6-5-9-5Z"/></svg>
+      Pasajero
+    </button>
+    <button class="role-btn" data-role="driver">
+      <svg viewBox="0 0 24 24"><path d="M5 11 6.6 6.2A2 2 0 0 1 8.5 5h7a2 2 0 0 1 1.9 1.2L19 11m-14 0h14m-14 0a2 2 0 0 0-2 2v5h2m14-7a2 2 0 0 1 2 2v5h-2M7 18a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm10 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm-10 0h10"/></svg>
+      Conductor
+    </button>
+    <button class="role-btn" data-role="admin">
+      <svg viewBox="0 0 24 24"><path d="M4 19V10m5 9V5m5 14v-7m5 7V8"/></svg>
+      Administrador
+    </button>
+  </nav>
+</header>
+
+<!-- ============ ESCENARIO PRINCIPAL ============ -->
+<main class="stage" id="stage">
+
+  <!-- ---------- ROL: CLIENTE (mockup tipo teléfono) ---------- -->
+  <section class="role-view is-active" id="view-client">
+    <div class="phone">
+      <div class="phone-notch"></div>
+      <div class="phone-screen" id="clientScreen"><!-- render JS --></div>
+    </div>
+    <p class="stage-caption">Vista del pasajero — así se ve la app en su teléfono durante el traslado.</p>
+  </section>
+
+  <!-- ---------- ROL: CONDUCTOR (mockup tipo teléfono, layout operativo) ---------- -->
+  <section class="role-view" id="view-driver">
+    <div class="phone phone--driver">
+      <div class="phone-notch"></div>
+      <div class="phone-screen" id="driverScreen"><!-- render JS --></div>
+    </div>
+    <p class="stage-caption">Vista del conductor — gestiona su viaje asignado y actualiza cada etapa.</p>
+  </section>
+
+  <!-- ---------- ROL: ADMINISTRADOR (dashboard de escritorio) ---------- -->
+  <section class="role-view" id="view-admin">
+    <div class="admin-shell" id="adminShell"><!-- render JS --></div>
+  </section>
+
+</main>
+
+<!-- Contenedor global de notificaciones (toasts) -->
+<div class="toast-stack" id="toastStack"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
